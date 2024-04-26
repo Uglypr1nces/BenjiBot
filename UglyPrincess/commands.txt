@@ -1,0 +1,11 @@
+!help - Display the list of available commands
+!ping - Check if the bot is online
+!info - Display information about the bot
+!kick <user> - Kick a user from the server
+!ban <user> - Ban a user from the server
+!mute <user> - Mute a user in the server
+!unmute <user> - Unmute a user in the server
+!clear <amount> - Clear a specified number of messages in a channel
+!play <song> - Play a song in a voice channel
+!stop - Stop playing the current song
+!skip - Skip the current song

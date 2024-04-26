@@ -1,6 +1,7 @@
 import os
 import discord
 from discord.ext import commands
+from UglyPrincess.responses import handle_response
 from UglyPrincess.secretkey import secretkey
 
 intents = discord.Intents.default()
@@ -36,14 +37,6 @@ async def send_message(message, user_message, is_private):
         response = "I'm sorry, I encountered an error: " + str(e)
         await message.channel.send(response)
 
-
-def handle_response(message):
-    message = str(message).lower()
-
-    if message == "hi":
-        return "Hello! How can I help you?"
-
-    return "I'm sorry, I don't understand that."
 
 
 def run_discord_bot():
