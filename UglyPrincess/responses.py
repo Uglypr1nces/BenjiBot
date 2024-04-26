@@ -7,7 +7,7 @@ def handle_response(message):
         return "Hello!"
 
     if message == "help":
-        commands = open("UglyPrincess/commands.txt", "r")
+        commands = open("UglyPrincess/variables/commands.txt", "r")
         return commands.read()
 
     if message == "suck":
@@ -43,5 +43,8 @@ def handle_response(message):
     
     if "insult" in message:
         return get_insult()
+
+    if "say" in message:
+        return message[4:]
 
     return "I'm sorry, I don't understand that."

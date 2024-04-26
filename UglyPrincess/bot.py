@@ -2,7 +2,7 @@ import os
 import discord
 from discord.ext import commands
 from UglyPrincess.responses import handle_response
-from UglyPrincess.secretkey import secretkey
+from UglyPrincess.variables.secretkey import secretkey
 
 intents = discord.Intents.default()
 

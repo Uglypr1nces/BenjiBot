@@ -2,5 +2,4 @@
 /Lib
 /Include
 /pyvenv.cfg
-/secretkey.txt
-/UglyPrincess/secretkey.py
+/UglyPrincess/variables/secretkey.py
