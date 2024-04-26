@@ -1,6 +1,4 @@
-# Project Name
-
-A brief description of the project.
+# UglyPrincess Discord Bot
 
 ## Table of Contents
 

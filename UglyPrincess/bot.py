@@ -1,10 +1,11 @@
 import discord
+import os
+from UglyPrincess.secretkey import secretkey
 from discord.ext import commands
 from discord import Intents
 from UglyPrincess.responses import *
 
 intents = Intents.default()
-bot = commands.Bot(command_prefix='!', intents=intents)
 
 async def send_message(message, user_message, is_private):
     try:
@@ -15,7 +16,8 @@ async def send_message(message, user_message, is_private):
 
 
 def run_discord_bot():
-    TOKEN = f = open(secret.txt, "r").read()
+    TOKEN = secretkey
+
     client = discord.Client(intents=intents)
 
     @client.event
@@ -31,6 +33,9 @@ def run_discord_bot():
         user_message = str(message.content)
         channel = str(message.channel)
 
-        print(f'{username} said: {user_message} in {channel}')
+        if user_message.startswith('!'):
+            user_message = user_message[1:]
+            await send_message(message, user_message, False)
+        print(f'{username} said: {str(message.content)} in {channel}')
         
     client.run(TOKEN)
