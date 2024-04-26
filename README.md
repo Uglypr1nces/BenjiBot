@@ -1,4 +1,4 @@
-# UglyPrincess Discord Bot
+# Benji Discord Bot
 
 This is just a silly little discord bot
 
