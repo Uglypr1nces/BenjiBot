@@ -1,41 +1,51 @@
-import discord
 import os
-from UglyPrincess.secretkey import secretkey
+import discord
 from discord.ext import commands
-from discord import Intents
-from UglyPrincess.responses import *
+from UglyPrincess.secretkey import secretkey
 
-intents = Intents.default()
+intents = discord.Intents.default()
+
+bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
+
+
+@bot.event
+async def on_ready():
+    print(f'We have logged in as {bot.user}')
+
+
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+
+    username = str(message.author)
+    user_message = str(message.content)
+    channel = str(message.channel)
+
+    if user_message.startswith('!'):
+        user_message = user_message[1:]
+        await send_message(message, user_message, False)
+    print(f'{username} said: {str(message.content)} in {channel}')
+
 
 async def send_message(message, user_message, is_private):
     try:
-        respone = responses.handle_response(user_message)
-        await message.author.send(respone) if is_private else await message.channel.send(respone)
+        response = handle_response(user_message)
+        await message.author.send(response) if is_private else await message.channel.send(response)
     except Exception as e:
         response = "I'm sorry, I encountered an error: " + str(e)
+        await message.channel.send(response)
+
+
+def handle_response(message):
+    message = str(message).lower()
+
+    if message == "hi":
+        return "Hello! How can I help you?"
+
+    return "I'm sorry, I don't understand that."
 
 
 def run_discord_bot():
     TOKEN = secretkey
-
-    client = discord.Client(intents=intents)
-
-    @client.event
-    async def on_ready():
-        print(f'We have logged in as {client.user}')
-
-    @client.event
-    async def on_message(message):
-        if message.author == client.user:
-            return
-
-        username = str(message.author)
-        user_message = str(message.content)
-        channel = str(message.channel)
-
-        if user_message.startswith('!'):
-            user_message = user_message[1:]
-            await send_message(message, user_message, False)
-        print(f'{username} said: {str(message.content)} in {channel}')
-        
-    client.run(TOKEN)
+    bot.run(TOKEN)
