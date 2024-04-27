@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 from UglyPrincess.responses import handle_response
 from UglyPrincess.variables.secretkey import secretkey
+from UglyPrincess.TicTacToe.game import Game
 
 intents = discord.Intents.default()
 
@@ -25,6 +26,7 @@ async def on_message(message):
 
     if user_message.startswith('!'):
         user_message = user_message[1:]
+
         await send_message(message, user_message, False)
     print(f'{username} said: {str(message.content)} in {channel}')
 
