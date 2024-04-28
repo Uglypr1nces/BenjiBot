@@ -32,11 +32,20 @@ async def on_message(message):
 
 async def send_message(message, user_message, is_private):
     try:
-        if "." in user_message:
+        if message == "TTT_Start":
+            game.gameon = True
+            await message.author.send("Game Started, you are playing as X") if is_private else await message.channel.send("Game Started, you are playing as X")
+        if "." in user_message and game.gameon:
             choices = user_message.split(".")
             row,index = choices[0],choices[1]
             game.update_board(row,index,"X")
-            await message.author.send(game.print_board) if is_private else await message.channel.send(game.print_board)
+            game.play_move()
+            if game.check_winner() == "X":
+                await message.author.send("You won") if is_private else await message.channel.send("You won")
+            elif game.check_winner() == "Y":
+                await message.author.send("You lost") if is_private else await message.channel.send("You lost")
+            else:
+                await message.author.send(game.print_board) if is_private else await message.channel.send(game.print_board)
         else:  
             response = handle_response(user_message)
             await message.author.send(response) if is_private else await message.channel.send(response)
