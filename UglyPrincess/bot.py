@@ -1,4 +1,5 @@
 import os
+import time
 import discord
 from discord.ext import commands
 from UglyPrincess.responses import handle_response
@@ -47,15 +48,15 @@ async def send_message(message, user_message, is_private):
                 else:
                     await message.author.send("Processing move...") if is_private else await message.channel.send("Processing move...")
                     game.update_board(row, index, "X")
+                    await message.author.send(game.print_board()) if is_private else await message.channel.send(game.print_board())
                     await message.author.send("Processing computer move...") if is_private else await message.channel.send("Processing computer move...")
+                    time.sleep(1)
                     game.play_move()
-
+                    await message.author.send(game.print_board()) if is_private else await message.channel.send(game.print_board())
                     if game.check_winner() == "X":
                         await message.author.send("You won") if is_private else await message.channel.send("You won")
                     elif game.check_winner() == "Y":
                         await message.author.send("You lost") if is_private else await message.channel.send("You lost")
-                    else:
-                        await message.author.send(game.print_board()) if is_private else await message.channel.send(game.print_board())
         else:  
             response = handle_response(user_message)
             await message.author.send(response) if is_private else await message.channel.send(response)
