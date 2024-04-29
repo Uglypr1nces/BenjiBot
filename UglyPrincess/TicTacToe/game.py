@@ -1,5 +1,4 @@
 import random
-from UglyPrincess.variables.TicTacToe import *
 
 class Game:
     def __init__(self):
