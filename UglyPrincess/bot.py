@@ -4,12 +4,12 @@ import discord
 from discord.ext import commands
 from UglyPrincess.variables.TicTacToe import *
 from UglyPrincess.responses import handle_response
-from UglyPrincess.variables.secretkey import secretkey
 from UglyPrincess.TicTacToe.game import Game
 
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 game = Game()
+secretkey = os.environ.get("DISCORD_TOKEN")
 
 @bot.event
 async def on_ready():
