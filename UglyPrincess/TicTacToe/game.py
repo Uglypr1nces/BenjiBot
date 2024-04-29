@@ -28,27 +28,43 @@ class Game:
     def check_winner(self):
         if self.row1[0] == self.row1[1] == self.row1[2] and self.row1[0] != " ":
             return self.row1[0]
+            self.reset_board()
+            self.gameon = False
 
         if self.row2[0] == self.row2[1] == self.row2[2] and self.row2[0] != " ":
             return self.row2[0]
-
+            self.reset_board()
+            self.gameon = False
+            
         if self.row3[0] == self.row3[1] == self.row3[2] and self.row3[0] != " ":
             return self.row3[0]
+            self.reset_board()
+            self.gameon = False
         
         if self.row1[0] == self.row2[0] == self.row3[0] and self.row1[0] != " ":
             return self.row1[0]
+            self.reset_board()
+            self.gameon = False
 
         if self.row1[1] == self.row2[1] == self.row3[1] and self.row1[1] != " ":
             return self.row1[1]
+            self.reset_board()
+            self.gameon = False
 
         if self.row1[2] == self.row2[2] == self.row3[2] and self.row1[2] != " ":
             return self.row1[2]
+            self.reset_board()
+            self.gameon = False
         
         if self.row1[0] == self.row2[1] == self.row3[2] and self.row1[0] != " ":
             return self.row1[0]
+            self.reset_board()
+            self.gameon = False
 
         if self.row1[2] == self.row2[1] == self.row3[0] and self.row1[2] != " ":
             return self.row1[2]
+            self.reset_board()
+            self.gameon = False
 
     def check_available_moves(self, row, index):
         if row == 1:

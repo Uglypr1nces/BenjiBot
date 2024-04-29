@@ -57,6 +57,9 @@ async def send_message(message, user_message, is_private):
                         await message.author.send("You won") if is_private else await message.channel.send("You won")
                     elif game.check_winner() == "Y":
                         await message.author.send("You lost") if is_private else await message.channel.send("You lost")
+        elif user_message == "TTT_End":
+            game.gameon = False
+            await message.author.send("Game Ended") if is_private else await message.channel.send("Game Ended")
         else:  
             response = handle_response(user_message)
             await message.author.send(response) if is_private else await message.channel.send(response)
