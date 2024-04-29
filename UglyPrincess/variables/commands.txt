@@ -7,4 +7,5 @@
 !<number1>/ <number2> - Divide two numbers
 !insult - Receive a random insult
 !say <message> - Make the bot say a message
-
+!TTT_Start`: Starts a new game
+!x.y`: Places an X on the board, where `x` is the row and `y` is the index
