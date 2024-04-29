@@ -2,6 +2,7 @@ import os
 import time
 import discord
 from discord.ext import commands
+from UglyPrincess.variables.TicTacToe import *
 from UglyPrincess.responses import handle_response
 from UglyPrincess.variables.secretkey import secretkey
 from UglyPrincess.TicTacToe.game import Game
@@ -54,11 +55,14 @@ async def send_message(message, user_message, is_private):
                     game.play_move()
                     await message.author.send(game.print_board()) if is_private else await message.channel.send(game.print_board())
                     if game.check_winner() == "X":
-                        await message.author.send("You won") if is_private else await message.channel.send("You won")
-                    elif game.check_winner() == "Y":
-                        await message.author.send("You lost") if is_private else await message.channel.send("You lost")
+                        await message.author.send("https://tenor.com/view/cat-cute-happy-jumping-gif-26555219") if is_private else await message.channel.send("https://tenor.com/view/cat-cute-happy-jumping-gif-26555219")
+                        game.reset_board()
+                    elif game.check_winner() == "O":
+                        await message.author.send("https://tenor.com/view/deadpool-gif-26545415") if is_private else await message.channel.send("https://tenor.com/view/deadpool-gif-26545415")
+                        game.reset_board()
         elif user_message == "TTT_End":
             game.gameon = False
+            game.reset_board()
             await message.author.send("Game Ended") if is_private else await message.channel.send("Game Ended")
         else:  
             response = handle_response(user_message)

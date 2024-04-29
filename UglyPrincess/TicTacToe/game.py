@@ -1,4 +1,5 @@
 import random
+from UglyPrincess.variables.TicTacToe import *
 
 class Game:
     def __init__(self):
@@ -27,45 +28,35 @@ class Game:
 
     def check_winner(self):
         if self.row1[0] == self.row1[1] == self.row1[2] and self.row1[0] != " ":
-            return self.row1[0]
+            winner = self.row1[0]
             self.reset_board()
-            self.gameon = False
-
+            return winner
         if self.row2[0] == self.row2[1] == self.row2[2] and self.row2[0] != " ":
             return self.row2[0]
-            self.reset_board()
-            self.gameon = False
-            
+            self.reset_board()       
         if self.row3[0] == self.row3[1] == self.row3[2] and self.row3[0] != " ":
             return self.row3[0]
             self.reset_board()
-            self.gameon = False
-        
         if self.row1[0] == self.row2[0] == self.row3[0] and self.row1[0] != " ":
-            return self.row1[0]
+            winner = self.row1[0]
             self.reset_board()
-            self.gameon = False
-
+            return winner
         if self.row1[1] == self.row2[1] == self.row3[1] and self.row1[1] != " ":
-            return self.row1[1]
+            winner = self.row1[1]
             self.reset_board()
-            self.gameon = False
-
+            return winner
         if self.row1[2] == self.row2[2] == self.row3[2] and self.row1[2] != " ":
-            return self.row1[2]
+            winnder = sef.row1[2]
             self.reset_board()
-            self.gameon = False
-        
+            return winner
         if self.row1[0] == self.row2[1] == self.row3[2] and self.row1[0] != " ":
-            return self.row1[0]
+            winner = self.row1[0]
             self.reset_board()
-            self.gameon = False
-
+            return winner
         if self.row1[2] == self.row2[1] == self.row3[0] and self.row1[2] != " ":
-            return self.row1[2]
+            winner = self.row1[2]
             self.reset_board()
-            self.gameon = False
-
+            return winner
     def check_available_moves(self, row, index):
         if row == 1:
             if self.row1[index] == " ":
@@ -100,13 +91,13 @@ class Game:
 
             if row == 1 and self.check_available_moves(1, index): 
                 print("move available")
-                self.update_board(1, index, "Y")
+                self.update_board(1, index, "O")
                 break
             if row == 2 and self.check_available_moves(2, index):
                 print("move available")
-                self.update_board(2, index, "Y")  
+                self.update_board(2, index, "O")  
                 break
             if row == 3 and self.check_available_moves(3, index):
                 print("move available")
-                self.update_board(3, index, "Y") 
+                self.update_board(3, index, "O") 
                 break
