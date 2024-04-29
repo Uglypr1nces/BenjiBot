@@ -35,6 +35,6 @@ To use the Benji Discord Bot, follow these steps:
 
 We welcome contributions from the community to help improve Chatify further. Whether it's fixing bugs, adding new features, or enhancing the UI, your contributions are highly appreciated.
 
-## Endresult
+## End result
 
 <img src="UglyPrincess/images/test.png" alt="alt text">
