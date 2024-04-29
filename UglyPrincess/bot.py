@@ -9,7 +9,7 @@ from UglyPrincess.TicTacToe.game import Game
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 game = Game()
-secretkey = os.environ.get("DISCORD_TOKEN")
+secretkey = os.environ.get("YOUR_DISCORD_TOKEN") #set your os environment variable to your token
 
 @bot.event
 async def on_ready():
