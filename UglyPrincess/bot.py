@@ -37,15 +37,17 @@ async def send_message(message, user_message, is_private):
             await message.author.send(game.print_board()) if is_private else await message.channel.send(game.print_board())
         elif "." in user_message:
             choices = user_message.split(".")
-            row, index = choices[0], choices[1] 
-            row, index = int(row), int(index)  
+            row, index = choices[0], choices[1]
+            row, index = int(row), int(index)
             if row < 1 or row > 3 or index < 0 or index > 2:
-                await message.author.send("Invalid move, try again") if is_private else await message.channel.send("Invalid move, try again")
+                await message.author.send("Out of bound, try again") if is_private else await message.channel.send("Out of bound, try again")
             else:
                 if not game.check_available_moves(row, index):
-                    await message.author.send("Invalid move, try again") if is_private else await message.channel.send("Invalid move, try again")
+                    await message.author.send("Move not available, try again") if is_private else await message.channel.send("Move not available, try again")
                 else:
-                    game.update_board(str(row), index, "X")
+                    await message.author.send("Processing move...") if is_private else await message.channel.send("Processing move...")
+                    game.update_board(row, index, "X")
+                    await message.author.send("Processing computer move...") if is_private else await message.channel.send("Processing computer move...")
                     game.play_move()
 
                     if game.check_winner() == "X":

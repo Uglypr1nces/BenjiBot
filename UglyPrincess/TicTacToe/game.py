@@ -16,12 +16,14 @@ class Game:
         self.row3 = [""] * 3
 
     def update_board(self, row, index, player):
-        if row == "1":
+        if row == 1:
             self.row1[index] = player
-        if row == "2":
+        elif row == 2:
             self.row2[index] = player
-        if row == "3":
+        elif row == 3:
             self.row3[index] = player
+        else:
+            print("Invalid row")
 
     def check_winner(self):
         if self.row1[1] == self.row1[4] == self.row1[7]:
@@ -49,20 +51,21 @@ class Game:
             return self.row1[7]
 
     def check_available_moves(self, row, index):
-        if row == "1":
+        if row == 1:
             if self.row1[index] == "":
                 return True
-        elif row == "2":
+        elif row == 2:
             if self.row2[index] == "":
                 return True
-        elif row == "3":
+        elif row == 3:
             if self.row3[index] == "":
                 return True
-        print("available moves:")
-        print(self.send_available_moves())
-        print(f"choosen moves: \nrow: {row}, index: {index}")
-        return False
-
+        else:
+            print("available moves:")
+            print(self.send_available_moves())
+            print(f"choosen moves: \nrow: {row}, index: {index}")
+            return False
+ 
     def send_available_moves(self):
         available_moves = []
         for i in range(3):
@@ -75,14 +78,18 @@ class Game:
         return available_moves
 
     def play_move(self):
-        row = random.randint(1, 3)
-        index = random.randint(0, 2)
-        if row == 1 and self.check_available_moves("1", index):  
-            self.update_board("1", index, "Y")  
-            
-        if row == 2 and self.check_available_moves("2", index):  
-            self.update_board("2", index, "Y")  
-            
-        if row == 3 and self.check_available_moves("3", index): 
-            self.update_board("3", index, "Y") 
-            
+        while True:
+            row = random.randint(1, 3)
+            print(f"row: {row}")
+            index = random.randint(0, 2)
+            print(f"index: {index}")
+
+            if row == 1 and self.check_available_moves(1, index):  
+                self.update_board(1, index, "Y")  
+                break
+            if row == 2 and self.check_available_moves(2, index):  
+                self.update_board(2, index, "Y")  
+                break
+            if row == 3 and self.check_available_moves(3, index): 
+                self.update_board(3, index, "Y") 
+                break
