@@ -24,7 +24,6 @@ async def on_message(message):
     channel = str(message.channel)
 
     if user_message.startswith('!'):
-        user_message = user_message[1:]
         await send_message(message, user_message, False)
     print(f'{username} said: {str(message.content)} in {channel}')
 
@@ -56,12 +55,17 @@ async def send_message(message, user_message, is_private):
                         await message.author.send(game.print_board()) if is_private else await message.channel.send(game.print_board())
         else:  
             response = handle_response(user_message)
+        response = handle_response(user_message)
+        if "." in user_message:
+            choices = response.split(".")
+            row,index = choices[0],choices[1]
+
+            print(row,index)
+        else:
             await message.author.send(response) if is_private else await message.channel.send(response)
     except Exception as e:
         response = "I'm sorry, I encountered an error: " + str(e)
         await message.channel.send(response)
-
-
 
 def run_discord_bot():
     TOKEN = secretkey

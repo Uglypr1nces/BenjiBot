@@ -1,4 +1,8 @@
 from UglyPrincess.variables.insults import get_insult
+from UglyPrincess.TicTacToe.game import Game
+
+test = "31"
+active_ttt = False
 
 def handle_response(message):
     message = str(message).lower()
@@ -41,10 +45,10 @@ def handle_response(message):
         except:
             return "I'm sorry, I can't divide those numbers."
     
-    if "insult" in message:
+    if "insult" == message:
         return get_insult()
 
-    if "say" in message:
+    if "say" == message:
         return message[4:]
 
     return "I'm sorry, I don't understand that."
