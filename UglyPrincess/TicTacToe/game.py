@@ -25,6 +25,7 @@ class Game:
         else:
             print("Invalid row")
 
+
     def check_winner(self):
         if self.row1[1] == self.row1[4] == self.row1[7]:
             return self.row1[1]
@@ -84,12 +85,15 @@ class Game:
             index = random.randint(0, 2)
             print(f"index: {index}")
 
-            if row == 1 and self.check_available_moves(1, index):  
-                self.update_board(1, index, "Y")  
+            if row == 1 and self.check_available_moves(1, index): 
+                print("move available")
+                self.update_board(1, index, "Y")
                 break
-            if row == 2 and self.check_available_moves(2, index):  
+            if row == 2 and self.check_available_moves(2, index):
+                print("move available")
                 self.update_board(2, index, "Y")  
                 break
-            if row == 3 and self.check_available_moves(3, index): 
+            if row == 3 and self.check_available_moves(3, index):
+                print("move available")
                 self.update_board(3, index, "Y") 
                 break

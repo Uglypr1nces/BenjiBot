@@ -48,7 +48,7 @@ def handle_response(message):
     if "insult" == message:
         return get_insult()
 
-    if "say" == message:
+    if "say" in message:
         return message[4:]
 
     return "I'm sorry, I don't understand that."
