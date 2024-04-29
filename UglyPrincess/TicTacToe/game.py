@@ -15,20 +15,6 @@ class Game:
         self.row2 = [""] * 3
         self.row3 = [""] * 3
 
-class Game:
-    def __init__(self):
-        self.row1 = " | | "
-        self.row2 = " | | "
-        self.row3 = " | | "
-
-    def print_board(self):
-        return f" {self.row1}\n{self.row2}\n{self.row3}"
-    
-    def reset_board(self):
-        self.row1 = " | | "
-        self.row2 = " | | "
-        self.row3 = " | | "
-
     def update_board(self, row, index, player):
         if row == "1":
             self.row1[index] = player
@@ -99,3 +85,4 @@ class Game:
             
         if row == 3 and self.check_available_moves("3", index): 
             self.update_board("3", index, "Y") 
+            
