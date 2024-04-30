@@ -36,7 +36,7 @@ To use the Benji Discord Bot, follow these steps:
 
 1. Clone repo:
    ```bash
-   git clone https://github.com/Uglypr1nces/Math_Quiz.git
+   git clone https://github.com/Uglypr1nces/BenjiBot.git
    ```
 2. Install dependencies:
    ```bash
