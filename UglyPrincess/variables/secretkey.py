@@ -15,3 +15,9 @@ def save_key_to_file(key):
 
 def check_key():
     return os.path.isfile('secretkey.txt') and os.path.getsize('secretkey.txt') > 0
+
+def load_key():
+    global botsecretkey
+    with open('secretkey.txt', 'r') as file:
+        botsecretkey = file.read().strip()  # Strip any leading/trailing whitespace
+        return botsecretkey

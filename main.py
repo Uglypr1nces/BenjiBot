@@ -2,7 +2,7 @@ import sys
 import time
 
 from UglyPrincess.bot import run_discord_bot
-from UglyPrincess.variables.secretkey import check_key, save_key_to_file, botsecretkey
+from UglyPrincess.variables.secretkey import *
 
 def waiting_animation(wait_time):
     symbols = ['|', '/', '-', '\\']
@@ -26,4 +26,5 @@ if not check_key():
 else:
     print("Starting the bot...")
     waiting_animation(5)
-    run_discord_bot(botsecretkey)
+    print(load_key())
+    run_discord_bot(load_key())

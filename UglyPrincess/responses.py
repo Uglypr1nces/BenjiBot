@@ -47,5 +47,10 @@ def handle_response(message):
 
     if "say" in message:
         return message[4:]
+
+    if ":slight_Smile:" in message or "🙂" in message:
+        return get_bot_insult()
+
+
     return "I'm sorry, I don't understand that."
 

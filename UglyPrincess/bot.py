@@ -25,7 +25,7 @@ async def on_message(message):
     channel = str(message.channel)
 
     is_private = False
-    if username == "sleepygirl#7694":
+    if username == "sleepygirl#4817":
         await message.author.send(get_bot_insult()) if is_private else await message.channel.send(get_bot_insult())
 
     if user_message.startswith('!'):
