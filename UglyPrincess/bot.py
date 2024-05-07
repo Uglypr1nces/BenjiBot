@@ -11,7 +11,11 @@ from UglyPrincess.variables.insults import get_bot_insult
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 game = Game()
+<<<<<<< HEAD
 secretkey = botsecretkey
+=======
+secretkey = "" # insert your token here
+>>>>>>> 9b132590493635f1ca2b6bcf1965168ada2790bb
 
 @bot.event
 async def on_ready():
@@ -81,4 +85,7 @@ async def send_message(message, user_message, username, is_private):
 def run_discord_bot(secretkey):
     TOKEN = secretkey
     bot.run(TOKEN)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9b132590493635f1ca2b6bcf1965168ada2790bb
