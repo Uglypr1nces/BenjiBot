@@ -26,5 +26,4 @@ if not check_key():
 else:
     print("Starting the bot...")
     waiting_animation(5)
-    print(load_key())
     run_discord_bot(load_key())

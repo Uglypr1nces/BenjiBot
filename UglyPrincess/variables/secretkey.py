@@ -10,9 +10,8 @@ def save_key_to_file(key):
     global botsecretkey
     botsecretkey = key
     with open('secretkey.txt', 'w') as file:
-        file.write(botsecretkey)
-    print(botsecretkey)
-
+        file.write(botsecretkey.strip())
+        
 def check_key():
     return os.path.isfile('secretkey.txt') and os.path.getsize('secretkey.txt') > 0
 
