@@ -1,12 +1,9 @@
 from UglyPrincess.variables.insults import get_insult
 from UglyPrincess.TicTacToe.game import Game
 
-test = "31"
-active_ttt = False
-
 def handle_response(message):
     message = str(message).lower()
-
+    
     if message == "hi":
         return "Hello!"
 
@@ -51,4 +48,8 @@ def handle_response(message):
     if "say" in message:
         return message[4:]
 
+    if "nigger" in message:
+        return "https://tenor.com/view/richard-attenborough-whip-whipped-whiplash-whiplashed-gif-16890874512241116786"
+
     return "I'm sorry, I don't understand that."
+

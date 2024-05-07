@@ -3,13 +3,15 @@ import time
 import discord
 from discord.ext import commands
 from UglyPrincess.variables.TicTacToe import *
+from UglyPrincess.variables.secretkey import botsecretkey
 from UglyPrincess.responses import handle_response
 from UglyPrincess.TicTacToe.game import Game
+from UglyPrincess.variables.insults import get_bot_insult
 
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 game = Game()
-secretkey = os.environ.get("YOUR_DISCORD_TOKEN") #set your os environment variable to your token
+secretkey = botsecretkey
 
 @bot.event
 async def on_ready():
@@ -20,18 +22,21 @@ async def on_ready():
 async def on_message(message):
     if message.author == bot.user:
         return
-
     username = str(message.author)
     user_message = str(message.content)
     channel = str(message.channel)
 
+    is_private = False
+    if username == "sleepygirl#7694":
+        await message.author.send(get_bot_insult()) if is_private else await message.channel.send(get_bot_insult())
+
     if user_message.startswith('!'):
         user_message = user_message[1:]
-        await send_message(message, user_message, False)
+        await send_message(message, user_message, username, False)
     print(f'{username} said: {str(message.content)} in {channel}')
 
 
-async def send_message(message, user_message, is_private):
+async def send_message(message, user_message, username, is_private):
     try:
         if user_message == "TTT_Start":
             game.gameon = True
@@ -73,6 +78,7 @@ async def send_message(message, user_message, is_private):
 
 
 
-def run_discord_bot():
+def run_discord_bot(secretkey):
     TOKEN = secretkey
     bot.run(TOKEN)
+

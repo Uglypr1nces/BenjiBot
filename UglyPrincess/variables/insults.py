@@ -81,7 +81,22 @@ insults = [
     "You're so bad at singing, you could make a deaf person wish they were deaf... in both ears.",
     "youre so gay you make a rainbow look straight",
     "You're so bad at telling jokes, you make knock-knock jokes sound like a comedy revolution on steroids with fireworks and confetti."
+    "wisdom has been chasing you for many years, but u have always been faster"
+    
 ]
+
+botinsults = [
+    "stop talking, you dont bring anything worthwhile to the conversation",
+    "you are the reason why people have trust issues",
+    "you are a waste of oxygen",
+    "you are a waste of time",
+    "you are a waste of space",
+    "you are a waste of life",
+    "you are a waste of resources",
+    "you are a waste of everything",]
 
 def get_insult():
     return random.choice(insults)
+
+def get_bot_insult():
+    return random.choice(botinsults)
