@@ -7,6 +7,8 @@ from UglyPrincess.variables.secretkey import botsecretkey
 from UglyPrincess.responses import handle_response
 from UglyPrincess.TicTacToe.game import Game
 from UglyPrincess.variables.insults import get_bot_insult
+from UglyPrincess.variables.insults import get_emoji_insult
+import pdb
 
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
@@ -27,7 +29,8 @@ async def on_message(message):
     is_private = False
     if username == "sleepygirl#4817":
         await message.author.send(get_bot_insult()) if is_private else await message.channel.send(get_bot_insult())
-
+    if "🙂" in user_message:
+        await message.author.send(get_emoji_insult()) if is_private else await message.channel.send(get_emoji_insult())
     if user_message.startswith('!'):
         user_message = user_message[1:]
         await send_message(message, user_message, username, False)

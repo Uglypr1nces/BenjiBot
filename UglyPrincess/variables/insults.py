@@ -95,8 +95,19 @@ botinsults = [
     "you are a waste of resources",
     "you are a waste of everything",]
 
+emojiinsults = [
+    "creep",
+    "weirdo",
+    "stop it",
+    "for the love of god stop...",
+    "youre creeping me out man",
+    "stop this nonsense",
+]
 def get_insult():
     return random.choice(insults)
 
 def get_bot_insult():
     return random.choice(botinsults)
+
+def get_emoji_insult():
+    return random.choice(emojiinsults)
