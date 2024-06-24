@@ -46,7 +46,7 @@ async def send_message(message, user_message, username, is_private):
         elif "." in user_message:
             choices = user_message.split(".")
             row, index = choices[0], choices[1]
-            row, index = int(row), int(index)
+            row, index = int(row), int(index) + 1
             if row < 1 or row > 3 or index < 0 or index > 2:
                 await message.author.send("Out of bound, try again") if is_private else await message.channel.send("Out of bound, try again")
             else:
