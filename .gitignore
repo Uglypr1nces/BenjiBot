@@ -2,6 +2,7 @@
 /Lib
 /Include
 /pyvenv.cfg
+/venv
 /benjibot/__pycache__
 /benjibot/tictactoe/__pycache__
 /benjibot/variables/__pycache__
