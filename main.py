@@ -1,8 +1,19 @@
 import sys
 import time
-from benjibot.bot import run_discord_bot
-from benjibot.variables.secretkey import *
-from utils.waitinganimation import waiting_animation
+
+from UglyPrincess.bot import run_discord_bot
+from UglyPrincess.variables.secretkey import *
+
+def waiting_animation(wait_time):
+    symbols = ['|', '/', '-', '\\']
+    while wait_time > 0:
+        for symbol in symbols:
+            sys.stdout.write(f'\rloading {symbol}')
+            sys.stdout.flush()
+            time.sleep(0.1)
+            wait_time -= 1
+    sys.stdout.write('\rDone!     ')
+    sys.stdout.flush()
 
 if not check_key():
     secretkey = input("Please enter your bot token: ")

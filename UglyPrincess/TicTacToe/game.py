@@ -17,11 +17,11 @@ class Game:
 
     def update_board(self, row, index, player):
         if row == 1:
-            self.row1[index - 1] = player
+            self.row1[index] = player
         elif row == 2:
-            self.row2[index - 1] = player
+            self.row2[index] = player
         elif row == 3:
-            self.row3[index - 1] = player
+            self.row3[index] = player
         else:
             print("Invalid row")
 

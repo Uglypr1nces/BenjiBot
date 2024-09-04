@@ -44,7 +44,7 @@ To use the Benji Discord Bot, follow these steps:
    ```
 3. Create your own Bot <a href="/developers/applications">here</a> and get the client api key
 
-4. Insert the key in benjibot/bot.py
+4. Insert the key in UglyPrincess/bot.py
 
 5. Start the program
    ```bash
@@ -56,4 +56,4 @@ We welcome contributions from the community to help improve Chatify further. Whe
 
 ## End result
 
-<img src="benjibot/images/test.png" alt="alt text">
+<img src="UglyPrincess/images/test.png" alt="alt text">
