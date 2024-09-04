@@ -2,7 +2,7 @@
 /Lib
 /Include
 /pyvenv.cfg
-/UglyPrincess/__pycache__
-/UglyPrincess/TicTacToe/__pycache__
-/UglyPrincess/variables/__pycache__
+/benjibot/__pycache__
+/benjibot/tictactoe/__pycache__
+/benjibot/variables/__pycache__
 /secretkey.txt
