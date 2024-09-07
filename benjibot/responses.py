@@ -1,5 +1,5 @@
-from UglyPrincess.variables.insults import get_insult
-from UglyPrincess.TicTacToe.game import Game
+from benjibot.variables.insults import get_insult
+from benjibot.tictactoe.game import Game
 
 def handle_response(message):
     message = str(message).lower()
@@ -8,7 +8,7 @@ def handle_response(message):
         return "Hello!"
 
     if message == "help":
-        commands = open("UglyPrincess/variables/commands.txt", "r")
+        commands = open("benjibot/variables/commands.txt", "r")
         return commands.read()
 
     if message == "suck":

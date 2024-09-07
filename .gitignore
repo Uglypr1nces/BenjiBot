@@ -4,7 +4,6 @@
 /pyvenv.cfg
 /venv/
 /benjibot/__pycache__/
-/UglyPrincess/__pycache__/
-/UglyPrincess/TicTacToe/__pycache__/
-/UglyPrincess/variables/__pycache__/
+/benjibot/tictactoe/__pycache__/
+/benjibot/variables/__pycache__/
 .secretkey.txt

@@ -2,12 +2,12 @@ import os
 import time
 import discord
 from discord.ext import commands
-from UglyPrincess.variables.TicTacToe import *
-from UglyPrincess.variables.secretkey import botsecretkey
-from UglyPrincess.responses import handle_response
-from UglyPrincess.TicTacToe.game import Game
-from UglyPrincess.variables.insults import get_bot_insult
-from UglyPrincess.variables.insults import get_emoji_insult
+from benjibot.variables.tictactoe import *
+from benjibot.variables.secretkey import botsecretkey
+from benjibot.responses import handle_response
+from benjibot.tictactoe.game import Game
+from benjibot.variables.insults import get_bot_insult
+from benjibot.variables.insults import get_emoji_insult
 import pdb
 
 intents = discord.Intents.default()
